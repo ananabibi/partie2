@@ -1,7 +1,7 @@
 /*
  * prjsv 2023
  *
- * Marco Antognini & Jamila Sam
+ * Marco Antognini & Jamila Sam, Anna
  */
 
 
