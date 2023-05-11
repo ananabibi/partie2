@@ -36,7 +36,7 @@ void AnimalTest::onEvent(sf::Event event, sf::RenderWindow&)
             break;
         case sf::Keyboard::G:
 	  // UNCOMMENT WHEN READY TO TEST
-	  //getAppEnv().addEntity(new Bush(getCursorPositionInView()));
+	        getAppEnv().addEntity(new Bush(getCursorPositionInView()));
             break;
         case sf::Keyboard::W:
 	  // UNCOMMENT WHEN READY TO TEST

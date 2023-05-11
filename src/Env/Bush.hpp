@@ -9,7 +9,9 @@ private:
     double taille;
 
 public:
-    Bush(Vec2d pos, double size);
+    Bush(Vec2d position, double size);
+
+    Bush(Vec2d position);
 
 };
 
