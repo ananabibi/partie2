@@ -61,7 +61,9 @@ void Environment::update(sf::Time dt) {
 
 
 void Environment::drawOn(sf::RenderTarget &targetWindow) const {
-    // à faire
+    for (Water* plan : plans) {
+        plan->drawOn(targetWindow);
+    }
 }
 
 

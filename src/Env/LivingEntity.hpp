@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../partie1/src/Env/Obstacle.hpp"
+#include "../../../partie2/src/Env/Obstacle.hpp"
 
 class LivingEntity : public Obstacle {
 

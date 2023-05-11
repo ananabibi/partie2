@@ -3,12 +3,13 @@
 
 //CONSTRUCTEURS :
 Water::Water(Vec2d p)
-        :Obstacle(position,getAppConfig().water_size / 2 ,traversable), taille(getAppConfig().water_size) {}
+        :Obstacle(p,getAppConfig().water_size / 2 ,mTraversable), taille(getAppConfig().water_size) {}
 
 
 // METHODES :
 void Water::drawOn(sf::RenderTarget &target) const {
-    // à faire
+    auto waterSprite(buildSprite(mPosition, taille, getAppTexture(getAppConfig().water_texture)));
+    target.draw(waterSprite);
 }
 
 void Water::update(sf::Time dt) {
@@ -21,7 +22,9 @@ void Water::update(sf::Time dt) {
 }
 
 //GETTERS
-//sf::Texture Water::Application::getAppTexture(NULL){   // todo What is needed here
+//sf::Texture Water::getAppTexture(NULL) {
+//}
+//}
 /*sf::Texture Application::getAppTexture(NULL){
         return
 }*/
