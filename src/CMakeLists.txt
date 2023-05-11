@@ -136,8 +136,8 @@ find_package(SFML 2.5 QUIET COMPONENTS graphics window system)
 	      ##Graphical tests:
 
              ## AnimalTest
-#            add_executable(animalTest ${TEST_DIR}/GraphicalTests/AnimalTest.cpp ${SOURCES_GFX})
-#            target_link_libraries(animalTest ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
+         add_executable(animalTest ${TEST_DIR}/GraphicalTests/AnimalTest.cpp ${SOURCES_GFX})
+           target_link_libraries(animalTest ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
 
         else()
             message(STATUS "SFML NOT FOUND ! ")
