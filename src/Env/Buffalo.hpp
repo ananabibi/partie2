@@ -21,6 +21,10 @@ public :
     : Animal(position,getAppConfig().buffalo_size/2,false, getAppConfig().buffalo_energy_initial)
     {}
 
+    void drawOn(sf::RenderTarget &target) override ;
+
+
+
 
 
 

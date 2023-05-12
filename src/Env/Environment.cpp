@@ -6,6 +6,7 @@
 #include <Env/Environment.hpp>
 #include<SFML/Graphics.hpp>
 #include <Application.hpp>
+#include "Buffalo.hpp"
 
 //bool Environment::isPlaceable(Obstacle* other) {
 //    for(auto eau: plans) {

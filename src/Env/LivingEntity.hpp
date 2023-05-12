@@ -13,8 +13,7 @@ public:
 
     LivingEntity(Vec2d position, double rayon, bool traversable, double energie);
 
-    virtual void drawOn(sf::RenderTarget &target) {
-        std::cout << "Should never be called" << std::endl;
-    };
+    virtual void drawOn(sf::RenderTarget &target) ;
+//    { std::cout << "Should never be called" << std::endl;     };
 };
 
