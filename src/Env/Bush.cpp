@@ -18,5 +18,12 @@ Bush::Bush(Vec2d position)
                     getAppConfig().bush_initial_energy/2,
                     true,
                     getAppConfig().bush_initial_energy),
-            taille(getAppConfig().bush_initial_energy) {};
+            taille(getAppConfig().bush_initial_energy) {}
+
+void Bush::drawOn(sf::RenderTarget &target) {
+    auto bushSprite(buildSprite(mPosition, taille, getAppTexture(getAppConfig().bush_texture)));
+    target.draw(bushSprite);
+};
+
+
 

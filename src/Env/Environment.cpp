@@ -68,6 +68,9 @@ void Environment::drawOn(sf::RenderTarget &targetWindow) const {
     for (Water* plan : plans) {
         plan->drawOn(targetWindow);
     }
+    for (LivingEntity* etre : etres) {
+        etre->drawOn(targetWindow);
+    }
 }
 
 

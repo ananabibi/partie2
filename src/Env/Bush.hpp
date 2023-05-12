@@ -1,5 +1,6 @@
 #pragma once
 
+#include <SFML/Graphics/RenderTarget.hpp>
 #include "LivingEntity.hpp"
 
 
@@ -12,6 +13,8 @@ public:
     Bush(Vec2d position, double size);
 
     Bush(Vec2d position);
+
+    void drawOn(sf::RenderTarget &target) override;
 
 };
 
