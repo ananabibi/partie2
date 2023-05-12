@@ -57,6 +57,10 @@ void Environment::addWaterSource(Water *w) {
 
 void Environment::update(sf::Time dt) {
     //faire évoluer tout ce qui peut évoluer ici:
+    for (Water* plan : plans) {
+        plan->update( dt);
+    }
+
 }
 
 
