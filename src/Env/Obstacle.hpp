@@ -1,20 +1,16 @@
 /*
  *  Epidemic simulation
  *  2023
- * @authors: 
+ * @authors: Anna
  *
  */
 #pragma once
 
-#include <Utility/Vec2d.hpp>
 #include <iostream>
+#include <Utility/Vec2d.hpp>
+#include <SFML/Graphics/RenderTarget.hpp>
 
 class Obstacle {
-
-protected:
-    Vec2d mPosition;
-    double mRayon;
-    bool mTraversable;
 
 public:
     Obstacle(Vec2d position, double rayon, bool traversable);
@@ -30,6 +26,16 @@ public:
     bool isPointInside(Vec2d p) const;
 
     bool operator|(Obstacle const &b2);
+
+    virtual void drawOn(sf::RenderTarget &target) const { };
+
+    void update(sf::Time dt);
+
+protected:
+    Vec2d mPosition;
+    double mRayon;
+    bool mTraversable;
+
 };
 
 bool operator>(Obstacle body, Vec2d const &point);
