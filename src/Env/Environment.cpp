@@ -25,6 +25,11 @@ bool Environment::isEntityPlaceable(LivingEntity e) {
             return false;
         }
     }
+    for (auto plan: plans) {
+        if (e.isColliding(*plan)) {
+            return false;
+        }
+    }
 
     return true;
 }
