@@ -83,8 +83,8 @@ find_package(SFML 2.5 QUIET COMPONENTS graphics window system)
 #      target_link_libraries(vec2dTest sfml-graphics sfml-window sfml-system)
 
         ##Obstacle
-#       add_executable (obstacleTest  ${TEST_DIR}/UnitTests/ObstacleTest.cpp ${SOURCES} ${CACHE_SOURCES})
-#       target_link_libraries(obstacleTest sfml-graphics sfml-window sfml-system)
+       add_executable (obstacleTest  ${TEST_DIR}/UnitTests/ObstacleTest.cpp ${SOURCES} ${CACHE_SOURCES})
+       target_link_libraries(obstacleTest sfml-graphics sfml-window sfml-system)
 
        ##Genome
 #      add_executable (genomeTest  ${TEST_DIR}/UnitTests/GenomeTest.cpp ${SOURCES} ${CACHE_SOURCES})
@@ -122,8 +122,8 @@ find_package(SFML 2.5 QUIET COMPONENTS graphics window system)
 #             target_link_libraries(vec2dTest ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
 
               ## Obstacle
-#              add_executable (obstacleTest ${TEST_DIR}/UnitTests/ObstacleTest.cpp ${SOURCES} ${CACHE_SOURCES})
-#              target_link_libraries(obstacleTest ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
+              add_executable (obstacleTest ${TEST_DIR}/UnitTests/ObstacleTest.cpp ${SOURCES} ${CACHE_SOURCES})
+              target_link_libraries(obstacleTest ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
 
               ## Genome
 #              add_executable (genomeTest ${TEST_DIR}/UnitTests/GenomeTest.cpp ${SOURCES} ${CACHE_SOURCES})

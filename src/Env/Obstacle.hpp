@@ -27,10 +27,12 @@ public:
 
     bool operator|(Obstacle const &b2);
 
-
     void update(sf::Time dt);
 
-protected:
+    void setPosition(Vec2d position);
+
+
+        protected:
     Vec2d mPosition;
     double mRayon;
     bool mTraversable;

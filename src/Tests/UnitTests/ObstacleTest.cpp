@@ -7,7 +7,7 @@
 #include <Application.hpp>
 #include <Env/Obstacle.hpp>
 #include <Tests/UnitTests/CheckUtility.hpp>
-#include <catch.hpp>
+#include "../catch/catch.hpp"
 
 #include <iostream>
 size_t test_count(0);
@@ -21,7 +21,7 @@ public:
     :  Obstacle(pos, rad, isTraversable)
   {}
 	
-  double getRadius() const override
+/*  double getRadius() const override
   {
     return Obstacle::getRadius();
   }
@@ -29,6 +29,7 @@ public:
   Vec2d getCenter() const override {
     return Obstacle::getCenter();
   }
+todo Why are these here??? */
 };
 
 

@@ -1,9 +1,12 @@
 #include "Obstacle.hpp"
+#include <Application.hpp>
 
 // CONSTRUCTEURS :
 
 Obstacle::Obstacle(Vec2d position, double rayon, bool traversable)
-        : mPosition(position), mRayon(rayon), mTraversable(traversable) {}
+        : mRayon(rayon), mTraversable(traversable) {
+    setPosition(position);
+}
 
 // GETTERS :
 
@@ -40,6 +43,19 @@ bool Obstacle::isPointInside(Vec2d p) const {
     }
 }
 
+void Obstacle ::setPosition(Vec2d position) {
+    auto size = getAppConfig().world_size;
+
+    Vec2d x = *new Vec2d(size, 0);
+    Vec2d y = *new Vec2d(0, size);
+
+    while (mPosition.x() < 0) mPosition+=x;
+    while (mPosition.x() > size) mPosition-=x;
+
+    while (mPosition.y() < 0) mPosition+=y;
+    while (mPosition.y() > size) mPosition-=y;
+
+}
 // SURCHARGE OPERATEURS :
 
 

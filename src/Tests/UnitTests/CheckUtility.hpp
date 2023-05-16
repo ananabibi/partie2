@@ -6,7 +6,7 @@
 #ifndef INFOSV_CHECKUTILITY_HPP
 #define INFOSV_CHECKUTILITY_HPP
 
-#include <catch.hpp>
+#include "../catch/catch.hpp"
 
 #include <cmath>
 
