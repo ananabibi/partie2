@@ -10,7 +10,7 @@ Buffalo::Buffalo(
     mDirection = Vec2d(1, 0).normalised();
 }
 
-void Buffalo::drawOn(sf::RenderTarget &target) {
+void Buffalo::drawOn(sf::RenderTarget &target) const {
     auto config = getAppConfig();
     std::string texture;
 

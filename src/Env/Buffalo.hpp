@@ -20,5 +20,6 @@ public :
             false,
             getAppConfig().buffalo_energy_initial) {}
 
-    void drawOn(sf::RenderTarget &target);
-};
+    void drawOn(sf::RenderTarget &target) const;
+
+    };
