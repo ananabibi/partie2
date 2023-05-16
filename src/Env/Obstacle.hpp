@@ -27,7 +27,6 @@ public:
 
     bool operator|(Obstacle const &b2);
 
-    virtual void drawOn(sf::RenderTarget &target) const { };
 
     void update(sf::Time dt);
 

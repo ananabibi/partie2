@@ -9,7 +9,7 @@ class Water : public Obstacle {
 
 public:
     Water(Vec2d position);
-    void drawOn(sf::RenderTarget &target) const override;
+    void drawOn(sf::RenderTarget &target) const;
     void update(sf::Time dt);
 
 

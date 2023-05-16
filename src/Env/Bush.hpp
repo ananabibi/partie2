@@ -11,7 +11,8 @@ public:
 
     Bush(Vec2d position);
 
-    void drawOn(sf::RenderTarget &target) ;
+    void drawOn(sf::RenderTarget &target) const;
+//    virtual void drawOn(sf::RenderTarget &target) const { };
 
 
 private:

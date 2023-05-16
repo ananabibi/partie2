@@ -20,8 +20,8 @@
 
 
 bool Environment::isEntityPlaceable(LivingEntity e) {
-    for (auto eau: plans) {
-        if (e.isColliding(*eau)) {
+    for (auto etre: etres) {
+        if (e.isColliding(*etre)) {
             return false;
         }
     }

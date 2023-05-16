@@ -7,6 +7,8 @@
 class Animal : public LivingEntity {
 
 public:
+    void update(sf::Time dt);
+    void move(sf::Time dt);
 
 protected :
     Animal(
@@ -18,10 +20,16 @@ protected :
     Genome mGenome;
     double mMasse;
     double mVmax;
+    double mAngle;
+    double mDistance;
 
 
 private :
     double getMass() const;
 
     double getStandardMaxSpeed() const;
+
+    double getViewRange() const;
+
+    double getViewDistance() const;
 };

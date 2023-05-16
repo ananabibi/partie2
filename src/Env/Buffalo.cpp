@@ -1,5 +1,6 @@
 #include<Application.hpp>
 #include "Buffalo.hpp"
+#include "Utility/Arc.hpp"
 
 Buffalo::Buffalo(
         Vec2d position, double rayon, bool traversable,
@@ -31,6 +32,17 @@ void Buffalo::drawOn(sf::RenderTarget &target) {
             buildSprite(mPosition,
                         config.buffalo_size,
                         getAppTexture(texture)));
+
     target.draw(buffaloSprite);
+
+    if (getAppConfig().getDebug()) {
+        sf::Color color = sf::Color::Black;
+        color.a = 16; // light, transparent grey
+        Arc arc(-mAngle / 2, mAngle / 2, mRayon, color, mRayon);
+        arc.setOrigin(mRayon, mRayon);
+        arc.setPosition(mDirection);
+        target.draw(arc);
+    }
+
 }
 
