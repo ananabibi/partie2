@@ -29,7 +29,7 @@ void Buffalo::drawOn(sf::RenderTarget &target) const {
     }
 
     auto buffaloSprite(
-            buildSprite(mPosition,
+            buildSprite(getPosition(),
                         config.buffalo_size,
                         getAppTexture(texture)));
 

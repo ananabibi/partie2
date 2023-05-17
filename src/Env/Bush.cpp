@@ -2,7 +2,7 @@
 #include <Application.hpp>
 
 Bush::Bush(Vec2d pos, double size)
-        :LivingEntity(mPosition,mRayon,mTraversable,getAppConfig().bush_initial_energy), taille(size) {
+        :LivingEntity(pos,mRayon,mTraversable,getAppConfig().bush_initial_energy), taille(size) {
 //    if (not(isColliding(other))) {
     taille = getAppConfig().bush_initial_energy;    // todo This saves the same info twice???
     //position = pos;
@@ -21,7 +21,7 @@ Bush::Bush(Vec2d position)
             taille(getAppConfig().bush_initial_energy) {}
 
 void Bush::drawOn(sf::RenderTarget &target) const {
-    auto bushSprite(buildSprite(mPosition, taille, getAppTexture(getAppConfig().bush_texture)));
+    auto bushSprite(buildSprite(getPosition(), taille, getAppTexture(getAppConfig().bush_texture)));
     target.draw(bushSprite);
 };
 

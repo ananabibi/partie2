@@ -15,9 +15,9 @@ class Obstacle {
 public:
     Obstacle(Vec2d position, double rayon, bool traversable);
 
-    Vec2d getCenter() const;
+   virtual Vec2d getCenter() const;
 
-    double getRadius() const;
+   virtual double getRadius() const;
 
     bool isTraversable() const;
 
@@ -31,12 +31,16 @@ public:
 
     void setPosition(Vec2d position);
 
+    void move(Vec2d vector);
 
-        protected:
-    Vec2d mPosition;
+    Vec2d getPosition() const { return mPosition; };
+
+protected:
     double mRayon;
     bool mTraversable;
 
+private:
+    Vec2d mPosition;
 };
 
 bool operator>(Obstacle body, Vec2d const &point);

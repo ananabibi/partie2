@@ -136,7 +136,7 @@ find_package(SFML 2.5 QUIET COMPONENTS graphics window system)
 	      ##Graphical tests:
 
              ## AnimalTest
-         add_executable(animalTest ${TEST_DIR}/GraphicalTests/AnimalTest.cpp ${SOURCES_GFX})
+         add_executable(animalTest ${TEST_DIR}/GraphicalTests/AnimalTest.cpp ${SOURCES_GFX} Env/lion.cpp Env/lion.hpp)
            target_link_libraries(animalTest ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
 
         else()

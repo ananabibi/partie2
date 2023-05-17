@@ -1,8 +1,7 @@
 #pragma once
-
 #include <Env/Environment.hpp>
 #include "Animal.hpp"
-#include"Animal.hpp"
+
 
 
 class Buffalo : public Animal {
@@ -13,7 +12,7 @@ public :
             double energie,
             const Genome *genomeMere = nullptr, const Genome *genomePere = nullptr);
 
-    Buffalo(Vec2d position)
+    explicit Buffalo(Vec2d position)
             : Animal(
             position,
             getAppConfig().buffalo_size / 2,

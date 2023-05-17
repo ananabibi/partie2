@@ -8,7 +8,7 @@ Water::Water(Vec2d position)
 
 // METHODES :
 void Water::drawOn(sf::RenderTarget &target) const {
-    auto waterSprite(buildSprite(mPosition, taille, getAppTexture(getAppConfig().water_texture)));
+    auto waterSprite(buildSprite(getPosition(), taille, getAppTexture(getAppConfig().water_texture)));
     target.draw(waterSprite);
 }
 

@@ -1,25 +1,15 @@
 #include"Animal.hpp"
 #include<Application.hpp>
 
-void Animal::update(sf::Time dt){
+void Animal::update(sf::Time dt) {
 
 }
 
-void Animal::move(sf::Time dt){
-    auto size = getAppConfig().world_size;
+void Animal::move(sf::Time dt) {
 
-    Vec2d x = *new Vec2d(size, 0);
-    Vec2d y = *new Vec2d(0, size);
+    Vec2d v = getPosition().normalised() * getStandardMaxSpeed();
 
-    while (mPosition.x() < 0) mPosition+=x;
-    while (mPosition.x() > size) mPosition-=x;
-
-    while (mPosition.y() < 0) mPosition+=y;
-    while (mPosition.y() > size) mPosition-=y;
-
-    Vec2d v = mPosition.normalised() * getStandardMaxSpeed();
-
-    mPosition += v*dt.asSeconds();
+    setPosition(getPosition() + v * dt.asSeconds());
 }
 
 // GETTERS
@@ -42,13 +32,13 @@ double Animal::getViewDistance() const { // TODO mettre dans buffalo?
 
 //CONSTRUCTEURS
 
-Animal:: Animal(
-        Vec2d position,double rayon, bool traversable,
+Animal::Animal(
+        Vec2d position, double rayon, bool traversable,
         double energie,
         const Genome *genomePere, const Genome *genomeMere)
-        : LivingEntity(position,rayon,traversable,energie),
-        mGenome(genomePere, genomeMere),
-        mDirection(Vec2d(1, 0).normalised())  {
+        : LivingEntity(position, rayon, traversable, energie),
+          mGenome(genomePere, genomeMere),
+          mDirection(Vec2d(1, 0).normalised()) {
     mMasse = 0;
     mVmax = 0;
 }

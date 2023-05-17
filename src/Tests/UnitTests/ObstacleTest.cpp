@@ -21,7 +21,7 @@ public:
     :  Obstacle(pos, rad, isTraversable)
   {}
 	
-/*  double getRadius() const override
+  double getRadius() const override
   {
     return Obstacle::getRadius();
   }
@@ -29,7 +29,7 @@ public:
   Vec2d getCenter() const override {
     return Obstacle::getCenter();
   }
-todo Why are these here??? */
+//todo Why are these here??? */
 };
 
 
