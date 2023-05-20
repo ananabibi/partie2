@@ -17,7 +17,9 @@ public :
             position,
             getAppConfig().buffalo_size / 2,
             false,
-            getAppConfig().buffalo_energy_initial) {}
+            getAppConfig().buffalo_energy_initial) {
+        mDirection = Vec2d(1,1);
+    }
 
     void drawOn(sf::RenderTarget &target) const;
 

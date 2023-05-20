@@ -2,7 +2,6 @@
 #include<Application.hpp>
 
 void Animal::update(sf::Time dt) {
-    std::cout << "got here"<< std::endl;
     move(dt);
 }
 
