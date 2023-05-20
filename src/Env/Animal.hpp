@@ -8,6 +8,7 @@ class Animal : public LivingEntity {
 
 public:
     void update(sf::Time dt);
+
     void move(sf::Time dt);
 
 protected :

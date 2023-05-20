@@ -66,6 +66,10 @@ void Environment::update(sf::Time dt) {
     for (Water* plan : plans) {
         plan->update( dt);
     }
+    for (LivingEntity* etre : etres) {
+        etre->update(dt);
+    }
+
 
 }
 

@@ -27,7 +27,7 @@ public:
 
     bool operator|(Obstacle const &b2);
 
-    void update(sf::Time dt);
+   virtual void update(sf::Time dt) {}
 
     void setPosition(Vec2d position);
 
