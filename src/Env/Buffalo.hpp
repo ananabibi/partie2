@@ -19,8 +19,16 @@ public :
             false,
             getAppConfig().buffalo_energy_initial) {
         mDirection = Vec2d(1,1);
+
+        //ajouter les getters de masse et vitesse
     }
 
     void drawOn(sf::RenderTarget &target) const;
 
-    };
+private :
+    double getMass() const;
+
+    double getStandardMaxSpeed() const;
+
+
+};

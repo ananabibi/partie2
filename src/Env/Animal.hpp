@@ -26,9 +26,9 @@ protected :
 
 
 private :
-    double getMass() const;
+    virtual double getMass() const = 0;
 
-    double getStandardMaxSpeed() const;
+    virtual double getStandardMaxSpeed() const = 0;
 
     double getViewRange() const;
 

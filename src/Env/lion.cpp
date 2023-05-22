@@ -18,3 +18,13 @@ Lion::Lion(Vec2d position)
         false,
         getAppConfig().lion_energy_initial) {}
 
+
+double Lion::getMass() const {
+    return getAppConfig().lion_mass;
+}
+
+double Lion::getStandardMaxSpeed() const {
+    return getAppConfig().lion_max_speed;
+}
+
+

@@ -7,7 +7,15 @@ Buffalo::Buffalo(
         double energie,
         const Genome *genomeMere, const Genome *genomePere)
         : Animal(position, rayon, traversable, getAppConfig().buffalo_energy_initial) {
-    mDirection = Vec2d(1, 1).normalised();
+    mDirection = Vec2d(1, 0).normalised();
+}
+
+double Buffalo::getMass() const {
+    return getAppConfig().buffalo_mass;
+}
+
+double Buffalo::getStandardMaxSpeed() const {
+    return getAppConfig().buffalo_max_speed;
 }
 
 void Buffalo::drawOn(sf::RenderTarget &target) const {
@@ -28,12 +36,15 @@ void Buffalo::drawOn(sf::RenderTarget &target) const {
         }
     }
 
-    auto angle = mDirection.angle();    // todo Change to degrees
+
+    auto radians = mDirection.angle();// todo Change to degrees
+    auto degres = radians / DEG_TO_RAD;
+
     auto buffaloSprite(
             buildSprite(getPosition(),
                         config.buffalo_size,
                         getAppTexture(texture),
-                        angle));
+                        degres));
 
     target.draw(buffaloSprite);
 

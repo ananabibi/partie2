@@ -14,13 +14,6 @@ void Animal::move(sf::Time dt) {
 
 // GETTERS
 
-double Animal::getMass() const { // TODO mettre dans buffalo?
-    return getAppConfig().buffalo_mass;
-}
-
-double Animal::getStandardMaxSpeed() const { // TODO mettre dans buffalo?
-    return getAppConfig().buffalo_max_speed;
-}
 
 double Animal::getViewRange() const { // TODO mettre dans buffalo?
     return getAppConfig().buffalo_view_range;
