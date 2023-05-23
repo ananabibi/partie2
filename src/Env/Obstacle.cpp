@@ -45,9 +45,10 @@ bool Obstacle::isPointInside(Vec2d p) const {
 
 void Obstacle ::move(Vec2d vector) {
     // todo There's probably a problem here
-    auto size = getAppConfig().world_size;
+//    auto size = getAppConfig().world_size;
 
-    Vec2d x = *new Vec2d(size, 0);
+    setPosition(mPosition + vector);
+/*    Vec2d x = *new Vec2d(size, 0);  // todo Mem leak?
     Vec2d y = *new Vec2d(0, size);
 
     while (mPosition.x() < 0) mPosition+=x;
@@ -55,8 +56,9 @@ void Obstacle ::move(Vec2d vector) {
 
     while (mPosition.y() < 0) mPosition+=y;
     while (mPosition.y() >= size) mPosition-=y;
+*/
 
-    mPosition = vector;
+    setPosition(vector) ;
 }
 // SURCHARGE OPERATEURS :
 

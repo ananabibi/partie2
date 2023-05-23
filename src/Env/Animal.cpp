@@ -7,10 +7,26 @@ void Animal::update(sf::Time dt) {
 
 void Animal::move(sf::Time dt) {
 
-    Vec2d v = getPosition().normalised() * getStandardMaxSpeed();
+    double y = getNewRotation();
+    mAngle +=y;
 
-    setPosition(getPosition() + v * dt.asSeconds());
+    Vec2d v = getPosition().normalised() * getStandardMaxSpeed();
+    v = getPosition() + v * dt.asSeconds();
+    Obstacle :: move(v);
+    //    setPosition(getPosition() + v * dt.asSeconds());
+
+
+
 }
+
+double Animal :: getNewRotation() {
+    std :: vector <double> intervals = { -180, -100, -55, -25, -10, 0, 10, 25, 55, 100, 180};
+    std :: vector <double> probs = {0.0000,0.0000,0.0005,0.0010,0.0050,0.9870,0.0050,0.0010,0.0005,0.0000,0.0000};
+
+    return piecewise_linear(intervals, probs) * DEG_TO_RAD;
+
+}
+
 
 // GETTERS
 

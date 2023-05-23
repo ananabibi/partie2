@@ -11,6 +11,11 @@ public:
 
     void move(sf::Time dt);
 
+    double getNewRotation();
+
+    void setRotation (double angle);
+
+
 protected :
     Animal(
             Vec2d position, double rayon, bool traversable,
