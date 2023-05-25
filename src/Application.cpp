@@ -43,7 +43,7 @@ std::string configFileRelativePath(int argc, char const** argv)
     if (argc >= 2) {
         return RES_LOCATION + argv[1];
     } else {
-        return RES_LOCATION + DEFAULT_CFG;
+        return RES_LOCATION + DFAULT_CFG;
     }
 }
 

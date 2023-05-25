@@ -71,7 +71,7 @@
                "max children":2
             },
             "view":{
-               "range": 6.283185307,
+               "range": 2.0943951023,
                "distance":450
             },
             "random walk": {

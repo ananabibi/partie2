@@ -19,7 +19,7 @@
 //}
 
 
-bool Environment::isEntityPlaceable(LivingEntity e) {
+bool Environment::isEntityColliding(LivingEntity e) {
     for (auto etre: etres) {
         if (e.isColliding(*etre)) {
             return false;
@@ -49,7 +49,7 @@ bool Environment::isWaterPlaceable(Water w) {
 
 
 void Environment::addEntity(LivingEntity *e) {
-    if (isEntityPlaceable(*e)) {//compléter
+    if (isEntityColliding(*e)) {//compléter
         etres.push_back(e);
     }
 }
@@ -116,6 +116,14 @@ Environment::Environment()
 // GETTERS :
 double Environment::getTemperature() const {
     return temperature;
+}
+
+Water* Environment::findNearestWaterSource(Animal& a) const { //todo bonne organisation ? env retourne la source la plus proche de lanimal, passé en paramètre
+    for (auto* w : plans) {
+        if (a.isPerceptible(w->getCenter(), w->getRadius())) return w; // todo prendre le plus proche?
+    }
+
+    return nullptr;
 }
 
 

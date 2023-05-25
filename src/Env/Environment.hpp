@@ -27,7 +27,7 @@ private:
     std::list<LivingEntity *> etres;
     std::list<Water *> plans;
 public:
-    bool isEntityPlaceable(LivingEntity e);
+    bool isEntityColliding(LivingEntity e);
 
     bool isWaterPlaceable(Water w);
 
@@ -53,6 +53,8 @@ public:
     void decreaseTemperature();
 
     void resetControls();
+
+    Water* findNearestWaterSource(Animal& a) const;
 };
 
 

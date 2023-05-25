@@ -24,7 +24,6 @@ bool Obstacle::isTraversable() const {
 
 // METHODES :
 
-
 bool Obstacle::isColliding(Obstacle other) const {
     Vec2d diff(mPosition - other.getCenter());
     if (diff.length() <= (mRayon + other.getRadius())) {
@@ -43,41 +42,24 @@ bool Obstacle::isPointInside(Vec2d p) const {
     }
 }
 
-void Obstacle ::move(Vec2d vector) {
-    // todo There's probably a problem here
-//    auto size = getAppConfig().world_size;
-
-    setPosition(mPosition + vector);
-/*    Vec2d x = *new Vec2d(size, 0);  // todo Mem leak?
-    Vec2d y = *new Vec2d(0, size);
-
-    while (mPosition.x() < 0) mPosition+=x;
-    while (mPosition.x() >= size) mPosition-=x;
-
-    while (mPosition.y() < 0) mPosition+=y;
-    while (mPosition.y() >= size) mPosition-=y;
-*/
-
-    setPosition(vector) ;
-}
-// SURCHARGE OPERATEURS :
-
 void Obstacle::setPosition(Vec2d position) {
     auto size = getAppConfig().world_size;
     auto x = position.x();
     if(x < 0) {
-        x += size;   
+        x += size;
     } else if(x >= size) {
         x -= size;
     }
     auto y = position.y();
     if(y < 0) {
-        y += size;    
+        y += size;
     } else if(y >= size) {
         y -= size;
     }
     mPosition = Vec2d(x, y);
 }
+
+// SURCHARGE OPERATEURS :
 
 bool Obstacle::operator|(const Obstacle &other) {
     return this->isColliding(other);

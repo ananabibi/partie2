@@ -31,8 +31,6 @@ public:
 
     void setPosition(Vec2d position);
 
-    void move(Vec2d vector);
-
     Vec2d getPosition() const { return mPosition; };
 
 protected:

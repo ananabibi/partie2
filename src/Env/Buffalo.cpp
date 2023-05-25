@@ -48,12 +48,21 @@ void Buffalo::drawOn(sf::RenderTarget &target) const {
 
     target.draw(buffaloSprite);
 
-    if (getAppConfig().getDebug()) {
+    if (getAppConfig().getDebug()) { // todo modulariser
         sf::Color color = sf::Color::Black;
+        if (eauPercue != nullptr) color = sf::Color::Blue; // todo enlever (debug)
         color.a = 16; // light, transparent grey
-        Arc arc(-mAngle / 2, mAngle / 2, mRayon, color, mRayon);
-        arc.setOrigin(mRayon, mRayon);
-        arc.setPosition(mDirection);
+
+        double viewRange = getViewRange() / DEG_TO_RAD;
+        double viewDistance = getViewDistance();
+        double angle = mDirection.angle() / DEG_TO_RAD;
+        Vec2d position = getPosition();
+
+        Arc arc(-viewRange/2, viewRange/2, viewDistance, color, viewDistance);
+        arc.setOrigin(viewDistance, viewDistance);
+        arc.setPosition(position);
+        arc.rotate(angle);
+
         target.draw(arc);
     }
 

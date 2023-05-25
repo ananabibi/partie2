@@ -19,7 +19,7 @@
 #    pragma GCC system_header
 #endif
 
-// #included from: internal/catch_suppress_warnings.h
+// #included from: internal/catch_suppress_warnings.h 
 
 #ifdef __clang__
 #   ifdef __ICC // icpc defines the __clang__ macro

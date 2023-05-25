@@ -91,8 +91,8 @@ find_package(SFML 2.5 QUIET COMPONENTS graphics window system)
 #      target_link_libraries(genomeTest sfml-graphics sfml-window sfml-system)
 
       ##Perception
-#      add_executable (perceptionTest  ${TEST_DIR}/UnitTests/PerceptionTest.cpp ${SOURCES} ${CACHE_SOURCES})
-#      target_link_libraries(perceptionTest sfml-graphics sfml-window sfml-system)
+      add_executable (perceptionTest  ${TEST_DIR}/UnitTests/PerceptionTest.cpp ${SOURCES} ${CACHE_SOURCES} Tests/UnitTests/PerceptionTest.cpp)
+      target_link_libraries(perceptionTest sfml-graphics sfml-window sfml-system)
 
 	# #Graphical tests:
 
@@ -130,14 +130,14 @@ find_package(SFML 2.5 QUIET COMPONENTS graphics window system)
 #              target_link_libraries(genomeTest ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
 
               ## Perception
-#              add_executable (perceptionTest ${TEST_DIR}/UnitTests/PerceptionTest.cpp ${SOURCES} ${CACHE_SOURCES})
-#              target_link_libraries(perceptionTest ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
+              add_executable (perceptionTest ${TEST_DIR}/UnitTests/PerceptionTest.cpp ${SOURCES} ${CACHE_SOURCES})
+              target_link_libraries(perceptionTest ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
 
 	      ##Graphical tests:
 
              ## AnimalTest
-         add_executable(animalTest ${TEST_DIR}/GraphicalTests/AnimalTest.cpp ${SOURCES_GFX} Env/lion.cpp Env/lion.hpp)
-           target_link_libraries(animalTest ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
+#         add_executable(animalTest ${TEST_DIR}/GraphicalTests/AnimalTest.cpp ${SOURCES_GFX} Env/lion.cpp Env/lion.hpp Tests/UnitTests/PerceptionTest.cpp)
+#           target_link_libraries(animalTest ${SFML_LIBRARIES} ${SFML_DEPENDENCIES})
 
         else()
             message(STATUS "SFML NOT FOUND ! ")

@@ -11,13 +11,6 @@ Lion::Lion(
     mDirection = Vec2d(1, 0).normalised();
 }
 
-Lion::Lion(Vec2d position)
-        : Animal(
-        position,
-        getAppConfig().lion_size / 2,
-        false,
-        getAppConfig().lion_energy_initial) {}
-
 
 double Lion::getMass() const {
     return getAppConfig().lion_mass;
@@ -26,5 +19,17 @@ double Lion::getMass() const {
 double Lion::getStandardMaxSpeed() const {
     return getAppConfig().lion_max_speed;
 }
+
+void Lion::drawOn(sf::RenderTarget &target) const {
+    auto config = getAppConfig();
+    std::string texture;
+
+    if (mGenome.getSex() == MALE) {
+        texture = config.lion_texture_male;
+    } else {
+        texture = config.lion_texture_female;
+    }
+}
+
 
 

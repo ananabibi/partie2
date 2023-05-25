@@ -4,7 +4,7 @@
 */
 #include <Env/Buffalo.hpp>
 #include <cmath>
-#include <catch.hpp>
+#include <Catch/catch.hpp>
 #include <iostream>
 
 class OrientableBuffalo : public Buffalo
