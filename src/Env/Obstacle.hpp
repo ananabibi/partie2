@@ -15,9 +15,9 @@ class Obstacle {
 public:
     Obstacle(Vec2d position, double rayon, bool traversable);
 
-   virtual Vec2d getCenter() const;
+    virtual Vec2d getCenter() const;
 
-   virtual double getRadius() const;
+    virtual double getRadius() const;
 
     bool isTraversable() const;
 
@@ -27,7 +27,7 @@ public:
 
     bool operator|(Obstacle const &b2);
 
-   virtual void update(sf::Time dt) {}
+    virtual void update(sf::Time dt) {}
 
     void setPosition(Vec2d position);
 

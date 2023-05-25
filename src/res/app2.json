@@ -1,0 +1,190 @@
+{
+   "debug":false,
+   "simulation":{
+      "time":{
+          "factor":2,
+          "max dt":0.05,
+	   "fixed step" : 0.01
+      },
+      "water":{
+         "texture":"water2.png",
+         "evaporation":{
+            "threshold": 50,
+            "rate": 3
+            },
+         "size":400
+       },
+      "bush": {
+          "texture":"food2.png",
+         "energy":{
+             "initial":300,
+            "max":400,
+            "min":3,
+             "growth factor":3
+         },
+	  "spread": {
+              "min energy ratio": 5,
+              "max count": 1,
+              "distance to water": 300,
+              "probability": 0.001
+	  }
+      },
+      "living entity":{
+        "tracked texture": "target.png",
+        "critical energy": 5,
+        "repulsive force": 1200
+      },
+      "animal":{
+         "random walk low energy":false,
+         "low energy factor": 0.3,
+         "meal retention":0.7,
+         "feed time": 5,
+            "base consumption" : 0.1,
+	  "min energy" : 5,
+         "reproduction":{
+               "delivery time":10,
+               "mating time":5,
+               "pregnancy proba": 0.5
+           },
+        "idle":{
+            "min":0.2,
+            "max":1,
+            "probability":0.001
+          },
+        "satiety":{
+            "min":100,
+            "max":700
+          },
+        "thirst delay": 10,
+        "thirst max duration": 1000,
+        "distance attraction to leader": 300,
+        "rotation delay": 0.5,
+
+        "buffalo":{
+            "mass":1,
+            "size":190,
+            "longevity":1e7,
+            "max speed":100,
+            "reproduction":{
+               "gestation time":10,
+               "min children":1,
+               "max children":2
+            },
+            "view":{
+               "range": 6.283185307,
+               "distance":450
+            },
+            "random walk": {
+               "jitter":2.0,
+               "radius":20,
+               "distance":160
+            },
+            "energy":{
+               "initial":80,
+               "min mating male":70,
+               "min mating female":100,
+               "loss mating male":20,
+               "loss female per child":15,
+               "loss factor":0,
+               "bite":1
+            },
+            "texture": { 
+               "black male":"buffalo-black-male.png",
+               "black female":"buffalo-black-female.png",
+               "gray male":"buffalo-gray-male.png",
+               "gray female":"buffalo-gray-female.png",
+               "leader": "buffalo-leader.png"
+            }
+         },
+         "lion":{
+            "mass":1,
+            "size":200,
+            "longevity":1e7,
+            "max speed":300,
+            "speed":0,
+            "rotation":{
+               "speed":1.570796327,
+               "angle precision":.125663706
+            },
+            "score for action":50,
+            "reproduction":{
+               "gestation time":10,
+               "min children":1,
+               "max children":1
+            },
+            "view":{
+               "range":4,
+               "distance":550
+            },
+            "random walk":{
+               "jitter":50,
+               "radius":100,
+               "distance":100
+            },
+            "energy":{
+               "initial":200,
+               "min mating male":150,
+               "min mating female":200,
+               "loss mating male":50,
+               "loss female per child":20,
+               "loss factor":0.015
+            },
+            "idle":{
+               "min":1,
+               "max":2,
+               "probability":0.005
+            },
+            "satiety":{
+            "min":70,
+            "max":500
+            },
+             "texture": {
+		 "male" : "lion-male.png",
+		 "female" : "lion-female.png"
+	     }
+         }
+      },
+      "virus" : {
+         "sparsity":.3,
+         "initial quantity":5,
+         "min quantity for infection":7,
+         "infection probability":.001,
+         "texture":"virus.png",
+         "infection range":250
+      },
+      "immune system" : {
+         "health recovery":1,
+         "health penalty":0.1,
+         "defense effectiveness":0.8,
+         "defense variability":0.2,
+         "adaptive baseline":.1
+      },
+      "genome" : {
+         "gray allele prevalence":.3,
+         "mutability innate immune system":.3
+      },
+      "world":{
+         "default size":2000,
+         "breeding delay": 3,
+         "temperature" : {
+            "default": 30,
+            "min": -10,
+            "max":70
+            },
+         "texture":"savannah1.jpg",
+          "debug texture":"sand.png"
+      }
+   },
+   "stats":{
+      "refresh rate":1
+   },
+   "window":{
+      "antialiasing level":4,
+      "title":"INFOSV Simulation",
+       "simulation" : { "size" : 500 },
+      "stats":{
+         "height":20
+      },
+       "control" : { "width" : 200 }
+   }
+}

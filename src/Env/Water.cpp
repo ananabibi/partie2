@@ -2,8 +2,11 @@
 #include <Application.hpp>
 
 //CONSTRUCTEURS :
-Water::Water(Vec2d position)
-        :Obstacle(position,getAppConfig().water_size / 2 ,mTraversable), taille(getAppConfig().water_size) {}
+Water::Water(Vec2d position) : Obstacle(
+            position,
+            getAppConfig().water_size / 2,
+            mTraversable), taille(getAppConfig().water_size
+) {}
 
 
 // METHODES :

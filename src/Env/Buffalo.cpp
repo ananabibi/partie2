@@ -7,7 +7,7 @@ Buffalo::Buffalo(
         double energie,
         const Genome *genomeMere, const Genome *genomePere)
         : Animal(position, rayon, traversable, getAppConfig().buffalo_energy_initial) {
-    mDirection = Vec2d(1, 0).normalised();
+     mDirection = Vec2d(1, 1).normalised();
 }
 
 double Buffalo::getMass() const {

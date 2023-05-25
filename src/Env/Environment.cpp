@@ -63,22 +63,20 @@ void Environment::addWaterSource(Water *w) {
 
 void Environment::update(sf::Time dt) {
     //faire évoluer tout ce qui peut évoluer ici:
-    for (Water* plan : plans) {
-        plan->update( dt);
+    for (Water *plan: plans) {
+        plan->update(dt);
     }
-    for (LivingEntity* etre : etres) {
+    for (LivingEntity *etre: etres) {
         etre->update(dt);
     }
-
-
 }
 
 
 void Environment::drawOn(sf::RenderTarget &targetWindow) const {
-    for (Water* plan : plans) {
+    for (Water *plan: plans) {
         plan->drawOn(targetWindow);
     }
-    for (LivingEntity* etre : etres) {
+    for (LivingEntity *etre: etres) {
         etre->drawOn(targetWindow);
     }
 }

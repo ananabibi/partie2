@@ -1,29 +1,22 @@
 #include "Obstacle.hpp"
 #include <Application.hpp>
 
-// CONSTRUCTEURS :
-
 Obstacle::Obstacle(Vec2d position, double rayon, bool traversable)
         : mRayon(rayon), mTraversable(traversable) {
     setPosition(position);
 }
 
-// GETTERS :
-
 Vec2d Obstacle::getCenter() const {
     return mPosition;
 }
 
-double Obstacle::getRadius() const { // todo getRayon?
+double Obstacle::getRadius() const {
     return mRayon;
 }
 
 bool Obstacle::isTraversable() const {
     return mTraversable;
 }
-
-// METHODES :
-
 
 bool Obstacle::isColliding(Obstacle other) const {
     Vec2d diff(mPosition - other.getCenter());
@@ -43,6 +36,11 @@ bool Obstacle::isPointInside(Vec2d p) const {
     }
 }
 
+bool operator>(Obstacle o, Vec2d const &p) {
+    return o.isPointInside(p);
+}
+
+
 void Obstacle ::move(Vec2d vector) {
     // todo There's probably a problem here
 //    auto size = getAppConfig().world_size;
@@ -58,7 +56,7 @@ void Obstacle ::move(Vec2d vector) {
     while (mPosition.y() >= size) mPosition-=y;
 */
 
-    setPosition(vector) ;
+//    setPosition(vector) ;
 }
 // SURCHARGE OPERATEURS :
 
@@ -79,11 +77,7 @@ void Obstacle::setPosition(Vec2d position) {
     mPosition = Vec2d(x, y);
 }
 
-bool Obstacle::operator|(const Obstacle &other) {
+bool Obstacle::operator|(const Obstacle &other) {    // Lets you write: bool areColliding = a | b;
     return this->isColliding(other);
-}
-
-bool operator>(Obstacle o, Vec2d const &p) {
-    return o.isPointInside(p);
 }
 

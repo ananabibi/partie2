@@ -8,8 +8,8 @@ class LivingEntity : public Obstacle {
 public:
 
     LivingEntity(Vec2d position, double rayon, bool traversable, double energie);
-    virtual void drawOn(sf::RenderTarget &target) const { std::cout << "Here????" << std::endl; };
 
+    virtual void drawOn(sf::RenderTarget &target) const {};
 
 protected:
 

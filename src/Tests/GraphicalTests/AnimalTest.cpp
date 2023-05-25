@@ -27,18 +27,14 @@ void AnimalTest::onEvent(sf::Event event, sf::RenderWindow &) {
     if (event.type == sf::Event::KeyPressed) {
         switch (event.key.code) {
             case sf::Keyboard::B:
-                // UNCOMMENT WHEN READY TO TEST
                 getAppEnv().addEntity(new Buffalo(getCursorPositionInView()));
                 break;
+
             case sf::Keyboard::G: {
-                 getAppEnv().addEntity(new Bush(getCursorPositionInView()));
-           //     Bush bush = Bush(getCursorPositionInView());
-            //    auto bushptr = &bush;
-          //      getAppEnv().addEntity(bushptr);
+                getAppEnv().addEntity(new Bush(getCursorPositionInView()));
             }
                 break;
             case sf::Keyboard::W:
-                // UNCOMMENT WHEN READY TO TEST
                 getAppEnv().addWaterSource(new Water(getCursorPositionInView()));
                 break;
             default:
