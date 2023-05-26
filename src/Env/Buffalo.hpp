@@ -29,4 +29,8 @@ private :
 
     double getStandardMaxSpeed() const;
 
+    void drawArc(sf::RenderTarget &target) const;
+
+    void drawTexts(sf::RenderTarget &target) const;
+
 };

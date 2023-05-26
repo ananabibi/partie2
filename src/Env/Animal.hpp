@@ -31,9 +31,10 @@ protected :
     double mMasse;
     double mAngle;
     double mDistance;
-    sf::Time mCompteurChangementDirection = sf::Time::Zero;
-    sf::Time mCompteurDelaiSoif= sf::Time::Zero;
+    sf::Time mDelaiChangementDirection = sf::Time::Zero;
+    sf::Time mDelaiSoif = sf::Time::Zero;
     Water* eauPercue;
+    bool mAssoiffe;
 
 private :
 

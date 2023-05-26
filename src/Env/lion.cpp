@@ -29,6 +29,14 @@ void Lion::drawOn(sf::RenderTarget &target) const {
     } else {
         texture = config.lion_texture_female;
     }
+
+    auto lionSprite(
+            buildSprite(getPosition(),
+                        config.lion_size,
+                        getAppTexture(texture),
+                        mAngle));
+
+    target.draw(lionSprite);
 }
 
 
